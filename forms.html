@@ -6,16 +6,41 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <link rel
-        <meta charset="UTF-8">
+        <title>Form</title>
+           <style>
+        label
+   {color:  royalblue;
+    font-size: 0.9em;
+    font-style:   oblique
+      }
+        
+    </style>
+       <meta charset="UTF-8"> <style>
+        input[type=text]
+        {  }
+        
+    </style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+ 
     <body>
+        <h1>Form</h1>
         <div>
-            <form action=""name="f1"id="f1"></form>
-            <input type="text"name="login"placeholder="login">
+            <form action=""  >
+                <label for="first"> Firstname </label>
+               <input type="text" id="first" name="firstname" /> </br>
+               <label for="second">Surname </label>
+               <input type="text" id="second" name="surname"/></br>
+          <label for="mail"> E-mail</label>
+          <input type="text" id="mail" name="e-mail"/></br>
+          <label for="hobby">Select Your Favourite Hobby</label>
+          <select id="hobby" name="favourite hobby">
+              <option value="go hiking">Go Hiking</option>
+              <option value="flowers">Drying and Pressing Flowers</option>
+              <option value="game">Playing Computer Games</option>
+          </select>
+          <input type="submit" value="Submit">
+            </form>
         </div>
-        <div>TODO write content</div>
-    </body>
+</body>
 </html>
