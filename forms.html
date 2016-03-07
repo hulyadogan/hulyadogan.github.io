@@ -8,19 +8,26 @@ and open the template in the editor.
     <head>
       <title>Form</title>
        <style>
+          
+          h1 {text-align: center ;
+              
+           }
         label
    {color:  royalblue;
     font-size: 0.9em;
     font-style:   oblique
       }
       input[type=text]
-      {padding:5px;
+      {padding:0.70%;
      display: table-header-group;
   border-width:3px;
       border-color:powderblue  ;
       border-style:  outset
      }
-   
+   #org{position:absolute;
+   top:20%;
+   left:45%;
+   background-color: bisque}
     </style>
        <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,12 +45,10 @@ and open the template in the editor.
           <input type="text" id="mail" name="e-mail"/></br>
           <label for="number">Student ID Number</label>
           <input type="text" id="number" name="id number"/></br>
-          <label for="hobby">Select Your Favourite Hobby</label>
-          <select id="hobby" name="favourite hobby">
-              <option value="go hiking">Go Hiking</option>
-              <option value="flowers">Drying and Pressing Flowers</option>
-              <option value="game">Playing Computer Games</option>
-          </select>
+          <label for="hobby">Select Your Favourite Hobby</label></br>
+          <input type="radio" name="hobby" id="hiking"> Go Hiking</br>
+          <input type="radio" name="hobby" id="flowers">Drying and Pressing Flowers</br>
+              <input type="radio" name="hobby" id="game">Playing Computer Games</br> 
           <input type="submit" value="Submit">
             </form>
         </div>
