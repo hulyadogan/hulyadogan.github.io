@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <title>Multiplication</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script>  src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+     <script> 
+            function multiply(){
+            var a = '#num1';
+            var b= '#num2';
+            var res= num1*num2;
+            
+        };
+      
+    
+  </script>
+</head>
+<body>
+<div>     <form>
+                <input type="text" id="num1" value="" placeholder="Number1"/>
+                <input type="text" id="num2" value="" placeholder="Number2"  />
+                 <input type="button" value="Multiply" 
+                    onmouseover="calculate();" 
+                    onclick="calculate();"/> 
+                   <label for="result">Result</label>
+                   <input type="text" id="res" name="result"/>
+              
+            </form></div>
+<script>
+            function calculate() {
+                var num1 = $('#num1').val();
+                var num2 = $('#num2').val();
+                var res = multiply(num1,num2);
+                $('#res').val(res);
+            }            
+        </script>
+</body>
+</html>
