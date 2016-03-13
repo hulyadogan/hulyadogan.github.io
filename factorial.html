@@ -10,7 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>  src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
-        <script> function factorial(number){
+        <script> 
+            function factorial(number){
             var res=1;
             for(var i=2;i<=number; i++){
                 res=res*i;
@@ -18,29 +19,36 @@ and open the template in the editor.
             }
             
       return res;
+  }
     
     
     //var.res5=.factorial(5);
-    function calculate(){
-    var innum=$('#num')[0].val();
-    var res=factorial(innum);
-    $ ('#res')[0].val(res);
-
-    }
+    
         
         </script>
     </head>
     <body>
         <div>
+            <form>
             <label for="number" >Number</label>
-            <input type="text" name="number"/>
-            <input type="button" value="Find factorial" onclick="calculate();"/></br>
-                   <label for="result">result</label>
-                   <input type="text" name="result" id="res"/>
+            <input type="text" id="number" name="number" value=""/>
+            <input type="button" value="Find factorial" 
+                    onmouseover="calculate();" 
+                    onclick="calculate();"/> </br>
+                   <label for="result">Result</label>
+                   <input type="text" id="res" name="result" />
           
-            
-            
-            
+  <script>
+          function calculate(){
+         var innum = $('#number').valueOf();
+         var res = factorial(innum);
+          $ ('#res') .value(res);
+  };
+  
+  
+   </script>
+           
+            </FORM>
         </div>
     </body>
 </html>
