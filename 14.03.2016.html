@@ -25,9 +25,34 @@ and open the template in the editor.
              
                </select>
                <input type="text" id="number2" name="number2"/>
-               <input type="button" id="calc" value="Calculate" onclick="calculate">
+               <input type="button" id="calc" value="Calculate" onclick="calculate();">
+               <input type="text" id="output" disabled>
                
             </form>
+            <div id="error">
+                
+            </div>
         </div>
+        <script> 
+            var i=1;
+            function calculate(){
+            var in1= parseInt ($('#input1').val());
+            var in2= parseInt ($('#input2').val());
+           
+            if(checkInput())
+               var res= eval(in1 + $('#operator').val() + in2);
+       }  else{
+           $('#error').html("you made"+ i + "mistakes");
+           i++;
+       }
+   }
+       function checkInput(){
+           if(isNaN(in1) || isNaN(in2)) {
+               return false;
+           }
+       }
+       
+   
+                    </script>
     </body>
 </html>
