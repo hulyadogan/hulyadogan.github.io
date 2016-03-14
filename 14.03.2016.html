@@ -9,6 +9,8 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script> 
+            </script>
     </head>
     <body>
         <div>
@@ -25,7 +27,7 @@ and open the template in the editor.
              
                </select>
                <input type="text" id="number2" name="number2"/>
-               <input type="button" id="calc" value="Calculate" onclick="calculate();">
+               <input type="button" id="calcbut" value="Calculate" >
                <input type="text" id="output" disabled>
                
             </form>
@@ -39,8 +41,8 @@ and open the template in the editor.
             var in1= parseInt ($('#input1').val());
             var in2= parseInt ($('#input2').val());
            
-            if(checkInput())
-               var res= eval(in1 + $('#operator').val() + in2);
+            if(checkInput()){
+               var res = eval(in1 + $('#operator').val() + in2);
        }  else{
            $('#error').html("you made"+ i + "mistakes");
            i++;
