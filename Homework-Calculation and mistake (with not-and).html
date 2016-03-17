@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Homework</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div>
+            
+         <form>
+            
+              <label for="numbers"> Calculation </label>
+               <input type="text" id="number1" name="number1" placeholder="Number1"> 
+               <select id="operator">
+                   <option value="+">+</option>
+                   <option value="-">-</option>
+                   <option value="*">*</option>
+                   <option value="/">/</option>
+             
+               </select>
+               
+               <input type="text" id="number2" placeholder="Number2" name="number2">
+               <input type="button" id="calc" value="Calculate" onclick="calculate();" >
+               <input type="text" id="output" disabled>
+                  
+               
+            </form>
+            <div id="error">
+                </div> 
+                </div>
+
+        <script> 
+            var i = 1;
+            function calculate(){
+            var in1 = parseInt ($('#number1').val());
+            var in2 = parseInt ($('#number2').val());
+            
+            if(checkNumbers(in1,in2)){
+               var res = eval(in1 + $('#operator').val() + in2);
+                $('#output').val(res);
+            }else{
+                if($('#number1').val()!="" && $('#number2').val()!=""){
+                    $('#error').html("you made "+ i + " mistakes");
+                    i++;
+                }   
+            }
+        }
+       function checkNumbers(in1, in2){
+           
+           if( !isNaN(in1) && !isNaN(in2)) {
+               return true;
+           }
+           return false;
+       }
+            
+    $("#calc").click(calculate());
+          
+                    </script>
+    </body>
+</html>
