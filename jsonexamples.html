@@ -1,0 +1,38 @@
+<!DOCTYPE html><!--//javascript object..
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>        
+                <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script> 
+        var obj={"name":"Matt","surname":"Smith","country":"England","email":"mattsmith@gmail.com","dateofbirth":"03.05.1990","weight":65,"height":171}; 
+        var rat =calcRatio(obj.height, obj. weight);
+        $('demo').append("height weight ratio: "+ rat);
+        
+        function calcRatio(height,weight) {
+            return height/weight;
+        };
+   
+        $('#demo')[0].innerHTML =
+        obj.name + "<br>" +
+        obj.surname + "<br>" +
+        obj.country + "<br>" +
+        obj.email + "<br>" +
+        obj.dateofbirth + "<br>" +
+        obj.weight + "<br>" +
+        obj.height ;
+        
+
+        
+        </script>
+       
+    </body>
+</html>
