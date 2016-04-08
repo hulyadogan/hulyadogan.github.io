@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Drag n Drop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <style>
+         
+            ul
+            {
+                list-style-type: none;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+</head>
+    <body>
+        <div>
+<!--            <div id="target">
+                Target
+            </div>
+            <div id="arrow">
+                Arrow
+            </div> -->
+            <ul id="ti">
+                <li id="t1">eins</li>
+                <li id="t2">zwei</li>
+                <li id="t3">drei</li>
+                <li id="t4">vier</li>
+                <li id="t5">fünf</li>
+                <li id="t6">sechs</li>
+                <li id="t7">sieben</li>
+                <li id="t8">acht</li>
+                <li id="t9">neun</li>
+                <li id="t10">zehn</li>
+            </ul>
+            <ul id="di">
+                <li id="d1">1</li>
+                <li id="d2">2</li>
+                <li id="d3">3</li>
+                <li id="d4">4</li>
+                <li id="d5">5</li>
+                <li id="d6">6</li>
+                <li id="d7">7</li>
+                <li id="d8">8</li>
+                <li id="d9">9</li>
+                <li id="d10">10</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+         
+            
+            $("#arrow").draggable();
+            $("#target").draggable();
+          
+            $("li").each (function()  {
+             var i;
+             for ( var i=1; i<=10; i++ ) {
+               $("#di li").draggable();
+            } 
+          });
+    
+
+          $("#ti li").droppable({drop: function (event, ui) {
+                    var di;
+                    var ti;
+                    for(var di= ui.draggable.attr("id"); di++,
+                            ti= ui.droppable.attr("id");ti++)
+                        if (di===ti ){
+                        $("#di").draggable("disable");
+                        $("#ti").html("&nbsp;").css("background-color", "green");
+                    }
+                }});
+            
+            $.fn.randomize = function (selector) {
+                var $elems = selector ? $(this).find(selector) : $(this).children(),
+                        $parents = $elems.parent();
+                $parents.each(function () {
+                    $(this).children(selector).sort(function () {
+                        return Math.round(Math.random()) - 0.5;
+                        // }). remove().appendTo(this); // 2014-05-24: Removed `random` but leaving for reference. See notes under 'ANOTHER EDIT'
+                    }).detach().appendTo(this);
+                });
+                return this;
+            };
+            $('ul').randomize();
+        </script>        
+    </body>
+</html>
