@@ -5,6 +5,8 @@
   <title>Game Project</title>
   <link type='text/css' rel='stylesheet' href='stylesheet.css' />
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans" />
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <style>
       body {
     font-family: Open Sans;
@@ -69,18 +71,28 @@ ul {
     margin: 0;
 }
 
-#prev {
-    display:none;
-}
-
 #start {
     display:none;
     width: 90px;
 }
-#a { position: relative; top: 50px ; left: 300px; }
-#b{ position: relative; top: 50px ; left: 400px; }
-#c { position: relative; top: 50px ; left: 500px; }
+#a { position: absolute; top: 400px ; left: 300px; }
+#b{ position: absolute; top: 400px ; left: 600px; }
+#c { position: absolute ; top: 400px ; left: 900px; }
+
+.box{ position: absolute;
+       height: 220px;
+       width: 220px;
+       opacity: 1;
+       text-align: center;
+       border-color: gray
+}
+#glycine {top: 600px; left: 300px; background:rosybrown}
+#proline {top: 600px; left: 600px; background:rosybrown}
+#hydroxy {top: 600px; left: 900px; background:rosybrown}
   </style>
+
+          
+        
 </head>
 
 <body>
@@ -90,19 +102,52 @@ ul {
     </div>
     <br/>
     <div id='quiz'></div>
-    <div class='button' id='next'><a href='#'>Next</a></div>
-    <div class='button' id='prev'><a href='#'>Prev</a></div>
+    <div class='button' id='next' ><a href='#' onclick="checkQuestion()"  >Next</a></div>
     <div class='button' id='start'> <a href='#'>Start Over</a></div>
-    <!-- <button class='' id='next'>Next</a></button>
-    		<button class='' id='prev'>Prev</a></button>
-    		<button class='' id='start'> Start Over</a></button> -->
+
   </div>
- <img id="a" style="-webkit-user-select: none" src="http://www.chemeddl.org/resources/models360/files/750/glycine-jmol.jpeg"width="190" height="190" v>
-    <img id="b" style="-webkit-user-select: none" src="http://www.chemeddl.org/resources/models360/files/145742/L-proline-jmol.jpeg" width="190" height="190">
-     <img id="c" style="-webkit-user-select: none" src="http://www.chemeddl.org/resources/models360/files/440015/L-4-hydroxyproline-jmol.jpeg" width="190" height="190">   
+    <img id="a" class="images" style="-webkit-user-select: none" src="http://www.chemeddl.org/resources/models360/files/750/glycine-jmol.jpeg" width="190" height="190">
+    <img id="b" class="images" style="-webkit-user-select: none" src="http://www.chemeddl.org/resources/models360/files/145742/L-proline-jmol.jpeg" width="190" height="190">
+     <img id="c" class="images" style="-webkit-user-select: none" src="http://www.chemeddl.org/resources/models360/files/440015/L-4-hydroxyproline-jmol.jpeg" width="190" height="190"> 
+         
+         <div class='box' id='glycine' > Glycine </div></br>
+         <div class='box' id='proline' > Proline </div></br>
+         <div class='box' id='hydroxy' > Hydroxy-proline</div>
+        
   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
   <script type="text/javascript" src='questions.json'></script>
   <script type='text/javascript' src='project.js'></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+       <script type="text/javascript">
+          
+      if (selections[0] === questions[0].correctAnswer) {
+        $("#a").draggable;
+        $("#glycine").droppable({drop: function(e, ui) {
+        console.log(ui.draggable);
+         $(this).css("background-color","gold");
+        
+      }});}
+      
+      if (selections[1] === questions[1].correctAnswer) {
+        $("#b").draggable;
+        $("#proline").droppable({drop: function(e, ui) {
+        console.log(ui.draggable);
+         $(this).css("background-color","gold");
+        
+      }});}
+      
+    if (selections[2] === questions[2].correctAnswer) {
+        $("#c").draggable;
+        $("#hydroxy").droppable({drop: function(e, ui) {
+        console.log(ui.draggable);
+         $(this).css("background-color","gold");
+ }});}
+        
+    </script>
+     
+
+
 </body>
 
 </html>
